@@ -1,0 +1,155 @@
+% ----------------------------------------------------------
+% Capitulo de revisão de literatura
+% ----------------------------------------------------------
+\chapter{Revisão bibliográfica}
+\label{cap:revisao}
+% ----------------------------------------------------------
+\section{Trabalhos correlatos}
+Foram encontrados 10 sistemas com Objetivos similares ao proposto por este projeto, ao longo desta sessão cada um deles será exposto, podendo ser visualizado uma comparação simples dos principais pontos de cada um por meio da tabela \ref{tab:comparação de sistemas}
+
+O primeiro foi o Language emulator \cite{LanguageEmulator}, projeto desenvolvido em 2003 na UFMG  utilizando a linguagem de programação java pelos pesquisadores Luiz Filipe Menezes Vieira, Marcos Augusto Menezes Vieira e Newton José Vieira. O projeto se trata de um simulador de autômatos que tem foco nas principais operações envolvendo autômatos finitos determinísticos, autômatos finitos não determinísticos com e sem transição lambda, maquinas de Moore e maquinas de Mealy, juntamente com as gramáticas regulares e as expressões regulares. As operações realizadas por esse sistema incluem transformações entre diferentes tipos de maquinas de estados e gramatica, assim como a capacidade de determinar de uma palavra pertence ou não a essa gramatica. Apesar se ser um projeto bastante completo em relação as suas funcionalidades, ele não apresenta uma interface que detalhe com diagramas essas operações, sendo interativa apenas por meio de botoes e textos.
+
+O segundo sistema foi AUTOMATOGRAPH  \cite{AUTOMATOGRAPH}, desenvolvido por Eduardo Bacchi Kienetz e Ana Paula Canal na UFRGS no ano de 2006 utilizando a linguagem de programação java e consegue reconhecer palavras de uma linguagem regurar pertencentes a linguadem de um automato informado pelo usuário e gerar uma gramatica regular a partir desse automato, porém assim como a anterior não possui uma interface gráfica que represente o diagrama desses autômatos.
+
+Em seguida Ginux Abstract Machine (GAM) \cite{GAM}, que é um sistema desenvolvido por Anibal Jukemura, Hugo Nascimento e Joaquim Uchôav na UFLA no ano de 2005, tem a capacidade de representar em forma de grafos direcionados AFDs, AFNs, AFNLs, APDs, APNs e MTs além de reconhecer se uma palavra pertence ou não a maquina de estados representada por esse grafo, a GAM tambem consegue transformar AFNs em AFDs e minimizar AFDs.
+
+FSM Simulator \cite{FSMSimulator}, é um aplicativo web desenvolvido por Ivan Zuzak e Vedrana Janković utilizando html, javascript e bootstrap. O FSM Simulator consegue representar o funcionamento e criar aleatoriamente AFDs, AFNs e expressões regulares em regex. além de criar e palavras aleatórias e realizar testes. Sua representação se da por meio de dígrafos estáticos.
+
+AutoSim ou Automaton Simulator \cite{Autosim} é um software desenvolvido em java por Carl Burch na Universidade Carnegie Mellon no ano de 2006. AutoSim é capas de construir e simular de forma dinâmica AFDs, AFNs, APDs e MTs por meio de grafos direcionados.
+
+Java Finite Automata Simulation Tool ou jFAST \cite{jFAST} é um software que foi desenvolvido na universidade de villanova por Timothy M. White e Thomas P. Way no ano de 2006 utilizando a linguagem de programação java e trás a proposta de construir diagramas dinâmicos para simular o comportamento de AFDs, AFNs, APDs e maquinas de turing.
+
+Finite State Machine Dsigner(FSMD) é um aplicativo web desenvolvido por Evan Wallace em 2010 com o objetivo de criar com facilidade diagramas que representassem maquinas de estados em geral e portar esses diagramas para vários formatos como png, json e latex, porém não simula seu funcionamento, apenas desenha as maquinas. 
+
+Automaton Simulator \cite{AutomatonSimulator} é um aplicativo web criado por Kyle Dickerson em 2021 e tem o proposito de simular o comportamento de AFDs, AFNs e APDs por meio de diagramas.
+
+UC Davis Automaton Simulator(UCDAS) \cite{UCDavisAutomatonSimulator} é uma aplicação web criada em 2020 por David Doty utilizando a linguagem de programação Elm na universsidade da california em Davis e se propõe a ser um simulador que demonstra o comportamento de alguns autômatos e gramaticas sendo: AFDs, AFNs, Regex, GLCs e MTs porém não possui uma interface com diagramas, sendo sua interatividade realizada por meio de texto e botões.
+
+Por fim, o sistema mais completo que é o JFLAP \cite{JFLAP} que teve seu desenvolvimento iniciado em 1990 na Rensselaer por Dan Caugherty e desde então teve a contribuição de vários desenvolvedores utilizando varias tecnologias como c++, java e javascript, tendo o desenvolvimento transferido para Duke University em 1995 e sua ultima atualização até o momento em 2018. Atualmente JFLAP consegue criar e simular AFD, ANF, APD, APN e MT além de transformar cada automato em sua respectiva gramatica e transformar autômatos que são equivalentes entre si como AFD em AFN e outras operações como minimizar AFDs. Realizando todas essas funções com diagramas e elementos gráficos que facilitam bastante o entendimento. 
+
+\renewcommand{\arraystretch}{1.5}
+\begin{table}
+    \centering
+    \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|}
+        \hline
+        \rowcolor{lightgray}
+         Sistema& ano&  linguagem&  idioma&  automatos&  operações& interface\\\hline
+         Language Emulator&  2003&  java&  Português&  3&  sim& apenas texto\\\hline
+         AUTOMA- TOGRAPH&  2004&  java&  Português&  2&  não& apenas texto\\\hline
+         GAM&  2005&  -&  Português&  6&  sim& gráfica estatica\\\hline
+         FSM Simulator&  -&  javascript&  Ingles&  2&  não& gráfica estática\\\hline
+         AutoSim&  2006&  java&  Ingles&  4&  não& gráfica dinâmica\\\hline
+         jFAST&  2006&  java&  Ingles& 4 &  não& gráfica dinâmica\\\hline
+         FSMD&  2010&  javascript&  ingles&  1&  não& gráfica dinâmica\\\hline
+         Automaton Simulator&  2021&  javascript&  ingles&  3&  não& gráfica dinâmica\\\hline
+         UCDAS&  2020&  Elm&  ingles&  4&  não& apenas texto\\\hline
+         JFLAP&  1990-2018&  -&  ingles&  5&  sim& gráfica dinâmica\\\hline
+    \end{tabularx}
+    \caption{Trabalhos relacionados}
+    \label{tab:comparação de sistemas}
+\end{table}
+
+Após visitar estes sistemas, foi possível perceber que apenas o simulador GAM simulava a execução de autômatos de pilha não determinísticos; porém, ele não possuía uma visualização satisfatória do não determinismo desse tipo de autômato, pois cada execução paralela possui sua própria pilha, estado atual e leitura de caractere da palavra, sendo difícil visualizar tantos dados simultaneamente de cada uma das execuções paralelas. Portanto, optou-se por criar um sistema que tivesse como um dos pontos principais representar esse não determinismo de forma aprimorada.
+ 
+
+\section{Derivadas}
+
+Em seu artigo de 1964 Janusz Brzozowski traz a ideia de derivadas de linguagens formais, utilizando expressões regulares. Derivadas de acordo com Brzozowski surgem ao consumir o primeiro símbolo de uma expressão regular a partir de algumas regras.
+
+\renewcommand{\arraystretch}{0.8}
+\[
+\begin{array}{c}
+Dada\, uma\, linguagem\, e_1\\
+se\, e_1 = a,\ \, então\ d(a,e_1) = \varepsilon \\
+se\, e_1 \neq a,\ \, então\ d(a,e_1) = \emptyset\\
+d(\varepsilon,e_1) = e_1\\
+\\
+Dada\ uma\ linguagem\ e*\\
+d(a,e*) = d(a,e)e*\\
+\\
+\delta(e*) = \varepsilon\\
+\delta(e) = \varepsilon\\
+\delta(\varepsilon) = \emptyset\\
+\\
+Dada\ uma\ linguagem\ e_1e_2\\
+d(a,e_1e_2)\\
+d(a,e_1)e_2 |  \delta(e_1) d(a,e_2)\\
+\\
+Dada uma linguagem (e_1|e_2)\\
+d(a,(e_1|e_2)) = d(a,e_1) | d(a,e_2)\\
+
+\end{array}
+\]
+
+Um exemplo utilizando as regras:
+\[\begin{array}{c}
+Dada\ a\ linguagem\  (a|\varepsilon)bc\\ 
+d(b,(a|\varepsilon)bc)\\ 
+d(b,(a|\varepsilon))bc | \delta(a|\varepsilon)d(b,bc)\\
+(d(b,a)|d(b,\varepsilon))bc | \varepsilon d(b,bc)\\
+(\emptyset|\emptyset)bc | d(b,bc)\\
+\emptyset|c = c\\
+\end{array}\]
+
+Mais tarde em 2011 Matthew Might e David Darais em seu artigo “Parsing with Derivatives” expandiram a ideia das derivadas de Brzozowski para linguagens livres de contexto, de forma que as derivadas são aplicadas sobre o resultado de linguagem já derivadas até a obtenção de gramáticas 
+
+Em 2019 mais uma vez essa ideia foi expandida por Ian Henriksen em seu artigo “Derivative grammars: a symbolic approach to parsing with derivatives” de forma que foi otimizada a criação de derivadas gramaticais, excluindo estados inalcançáveis enquanto se mantém regras originais equivalentes e ainda alcançáveis as regras da gramática derivada 
+
+\section{Maquinhas de estados}
+
+Máquinas de estado são modelos abstratos que podem ser transdutoras ou reconhecedoras de palavras, sendo as transdutoras aquelas que geram novas palavras pertencentes a uma linguagem específica e as reconhecedoras que reconhecem uma palavra como sendo ou não parte de uma linguagem específica. Neste trabalho daremos foco às máquinas reconhecedoras APD e APN.
+
+Um APD ou automato finito de pilha determinístico é uma máquina de estados formalmente denotada por uma sêxtupla 
+$\langle E,\Sigma, \Gamma, \delta,i,F>$ em que: 
+
+\begin{itemize}
+     \item $E$ é conjunto finito de elementos, ditos estados. 
+     \item $\Sigma$ também chamado de alfabeto, é um conjunto finito de elementos distintos, ditos símbolos.  
+     \item $\Gamma$ também chamado de alfabeto da pilha, é um conjunto finito de elementos distintos, ditos símbolos.
+     \item  $\delta : E \times \Sigma_\lambda \times \Gamma_\lambda \to E \times \Gamma_\lambda  $               
+     
+\end{itemize}
+
+
+ao AFD de forma que eles podem ser transformados um no outro sem que o seu potencial de reconhecer palavras seja alterado. A diferença entre um AFD e um AFN é o não determinismo classificado pela existência de duas transições de mesmo valor saindo de um mesmo estado para destinos diferentes. AFN$\lambda$ se trata de uma variação de AFN igualmente equivalente a AFD que pode possuir transições sem nenhum tipo de valor de leitura associado a elas, essas transições são chamadas de transições lambda.
+
+
+Um APN ou automato finito de pilha não determinístico é uma maquina de estados equivalente ao AFD de forma que eles podem ser transformados um no outro sem que o seu potencial de reconhecer palavras seja alterado. A diferença entre um AFD e um AFN é o não determinismo classificado pela existência de duas transições de mesmo valor saindo de um mesmo estado para destinos diferentes. AFN$\lambda$ se trata de uma variação de AFN igualmente equivalente a AFD que pode possuir transições sem nenhum tipo de valor de leitura associado a elas, essas transições são chamadas de transições lambda.
+
+%% definição formal 
+
+O AFD ou autômato finito determinístico é formado por um quíntupla $\langle \Sigma, E, \delta, i, F \rangle$ onde : 
+\begin{itemize}
+    \item $\Sigma$ : É um conjunto não vazio de elementos distintos ditos símbolos. 
+    \item $E$ : É um conjunto não vazio de elementos ditos estados.
+    \item $\delta : E \times \Sigma \to E$ : é uma função de total dita função de transição que mapeia cada possível par de estado por
+                  símbolo  em um estado. 
+    \item $i \in E$ : É um estado inicial.
+    \item $F \subseteq E$ : É um conjunto de estados finais.
+\end{itemize}
+
+%% Exemplo 
+
+%% Exemplo 
+
+%% Linguagem aceita por um autômato: 
+
+%% Não determinismo 
+%%    - definição (Ex. OK !)
+%%    - Equivalência ( Ex. AFN e AFD) 
+%%      Resultado importante : AFD e AFN reocnhecem a mesma classe de linguagens.
+
+%%  Propriedades de fechamento 
+%%   UNIOÂO, CONCATENAÇÂO ,INTERSEÇÃO, COMPLEMENTO. 
+%%   FOCO em como construir AF's 
+%%
+
+%% Minimização: 
+%%   - Propriedade : Unicidade 
+
+%% TIKz : Pacote latex para desenho.
+%%
+
+um alfabeto, que são os símbolos que ele lê; e um conjunto de transições, que determinam
+como ele se move de um estado para outro. Além disso, ele tem um estado inicial, de onde
+começa, e um ou mais estados finais, que indicam se uma sequência foi ou não aceita. 
